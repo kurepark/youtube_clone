@@ -1,0 +1,11 @@
+extends base.pug
+include mixins/video
+
+
+block content 
+    div
+        p=video.description 
+        small=video.createdAt
+    a(href=`${video.id}/edit`) Edit video &rarr;
+    br
+    a(href=`${video.id}/delete`) Delete video &rarr;
