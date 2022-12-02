@@ -1,0 +1,16 @@
+extends base 
+
+block content 
+    if errorMessage 
+        div=errorMessage
+    form(method="POST")
+        input(type="text" requred name="username" placeholder="write your username"  )
+        input(type="password" requred name="password" placeholder="write your password"  )
+        button(type="submit") login
+        br
+        a(href="/users/github/start") continue with github &rarr;
+
+    hr
+    div 
+        span 계정이 없나요?
+        a(href="/join") join in now &rarr;

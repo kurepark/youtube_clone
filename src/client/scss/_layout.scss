@@ -1,0 +1,198 @@
+// header
+.header {
+    position: fixed;
+    padding: $commonPaddingV $commonPaddingH;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--background);
+    box-shadow: 0 3px 3px rgba(#000, 0.03);
+    z-index: 10;
+}
+
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title_logo {
+        color: var(--point);
+    }
+
+    .title_link {
+        display: block;
+    }
+}
+
+.h_search_wrap {
+    position: relative;
+    flex: 1;
+    padding: 0 30px;
+
+    .search_form {
+        position: relative;
+        width: 100%;
+
+        input {
+            padding: 5px 45px 5px 15px;
+            font-size: 18px;
+            line-height: 30px;;
+            width: 100%;
+            background-color: var(--backgroundInput);
+            border: 1px solid rgba(#000, 0.6);
+            border-radius: $commonRadius;
+            box-sizing: border-box;
+            -webkit-border-radius: $commonRadius;
+            -moz-border-radius: $commonRadius;
+            -ms-border-radius: $commonRadius;
+            -o-border-radius: $commonRadius;
+        }
+
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 8px 15px;
+            border: 0;
+
+            i {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.h_profile_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .h_profile_box {
+        position: relative;
+        flex: 1;
+    }
+
+    .profile_link_upload {
+        padding: 5px 15px;
+        display: block;
+
+        i {
+            opacity: 0.9;
+            transform: scale(0.8);
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            -ms-transform: scale(0.8);
+            -o-transform: scale(0.8);
+}
+    }
+
+    .profile_link_set {
+        display: block;
+
+        &[aria-pressed="true"] {
+            & + .profile_nav_box {
+                display: block;
+            }
+        }
+    }
+
+    .profile_thumb {
+        overflow: hidden;
+        position: relative;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(#000, 0.1);
+            border-radius: inherit;
+            content: "";
+            -webkit-border-radius: inherit;
+            -moz-border-radius: inherit;
+            -ms-border-radius: inherit;
+            -o-border-radius: inherit;
+        }
+    }
+}
+
+.profile_nav_box {
+    // display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+}
+
+.nav_logged_list {
+    background-color: var(--background);
+    border-radius: $commonRadius;
+    border: 1px solid rgba(#000, 0.3);
+    -webkit-border-radius: $commonRadius;
+    -moz-border-radius: $commonRadius;
+    -ms-border-radius: $commonRadius;
+    -o-border-radius: $commonRadius;
+    white-space: nowrap;
+    box-shadow: 0 3px 6px rgba(#000, 0.06);
+
+    li + li {
+        border-top: 1px solid rgba(#000, 0.3);
+    }
+
+    a {
+        display: block;
+        padding: 0 15px;
+        font-size: 14px;
+        line-height: 38px;
+    }
+}
+
+.nav_unlogged_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+        flex: 1;
+    }
+
+    a {
+        padding: 0 10px;
+        display: block;
+        font-weight: bold;
+        line-height: 38px;
+    }
+}
+
+// main
+$commonFooterH: 80px;
+
+.main_container {
+    padding-top: 88px;
+    height: calc(100% - $commonFooterH);
+    box-sizing: border-box;
+}
+
+// footer
+.footer {
+    padding: $commonPaddingV $commonPaddingH;
+    line-height: 40px;
+    background-color: var(--backgroundPoint);
+
+    .f_btn_top {
+        position: fixed;
+        right: $commonPaddingH;
+        bottom: $commonPaddingV;
+
+        &:hover {
+            color: var(--point);
+        }
+    }
+}

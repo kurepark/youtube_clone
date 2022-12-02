@@ -1,0 +1,35 @@
+
+header.header
+    div.header_container
+        h1.title_logo
+            a(href="/").title_link
+                i.fab.fa-youtube.fa-3x
+        div.h_search_wrap
+            form(method="GET" action="/search").search_form
+                input(type="text" placeholder="search by title" name="keyword")
+                button(type="submit")
+                    i.fas.fa-search.fa-2x
+        div.h_profile_wrap 
+            if loggedIn
+                div.h_profile_box 
+                    a(href="/videos/upload").profile_link_upload
+                        i.fas.fa-upload.fa-2x
+            div.h_profile_box
+                if loggedIn
+                    a(href="#" aria-pressed="false").profile_link_set
+                        div.profile_thumb 
+                            img(src=`/${loggedInUser.avatarUrl}` width="100%")
+                    div.profile_nav_box 
+                        ul.nav_logged_list 
+                            li 
+                                a(href=`/users/${loggedInUser._id}`) 마이페이지
+                            li 
+                                a(href="/users/edit") 계정설정
+                            li 
+                                a(href="/users/logout") 로그아웃
+                else 
+                    ul.nav_unlogged_list
+                        li 
+                            a(href="/login") login
+                        li 
+                            a(href="/join") join

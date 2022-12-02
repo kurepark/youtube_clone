@@ -1,0 +1,18 @@
+extends base
+
+block content 
+    if errorMessage 
+        div=errorMessage
+    form(method="POST")
+        input(type="text" requred name="name" placeholder="write your name" )
+        input(type="email" requred name="email" placeholder="write your email" ) 
+        input(type="password" requred name="password" placeholder="write your password"  )
+        input(type="password" requred name="password2" placeholder="confirm your password"  )
+        input(type="text" requred name="username" placeholder="write your username"  )
+        input(type="text" name="location" placeholder="write your location" )
+        button(type="submit") join
+
+    hr
+    div 
+        span 이미계정이 있나요?
+        a(href="/login") login in now &rarr;

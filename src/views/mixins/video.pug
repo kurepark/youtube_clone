@@ -1,9 +1,14 @@
 mixin video(video)
-     div
+     div.video_card
+        a(href=`/videos/${video.id}`).video_link
+            div.video_image_box 
+                img(src=`${video.thumbUrl}`)
             h4  
                 a(href=`/videos/${video.id}`)=video.title
             p=video.description 
-            small=video.createdAt
+            div 
+                span #{video.owner.name} / 
+                span #{video.meta.views} 회
             ul
                 each hashtag in video.hashtags 
                     li=hashtag

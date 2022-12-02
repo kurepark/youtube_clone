@@ -1,0 +1,263 @@
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/scss/style.scss ***!
+  \*********************************************************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+}
+
+:root {
+  --main: #121212;
+  --sub: #B7C4CF;
+  --point: #f05454;
+  --background: #fff;
+  --backgroundPoint: #f5f5f5;
+  --backgroundInput: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main: #f0f0f0;
+    --sub: #eee;
+    --point: #f05454;
+    --background: #0f0f0f;
+    --backgroundPoint: #39393c;
+    --backgroundInput: #39393c;
+  }
+}
+.header {
+  position: fixed;
+  padding: 20px 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.03);
+  z-index: 10;
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_container .title_logo {
+  color: var(--point);
+}
+.header_container .title_link {
+  display: block;
+}
+
+.h_search_wrap {
+  position: relative;
+  flex: 1;
+  padding: 0 30px;
+}
+.h_search_wrap .search_form {
+  position: relative;
+  width: 100%;
+}
+.h_search_wrap .search_form input {
+  padding: 5px 45px 5px 15px;
+  font-size: 18px;
+  line-height: 30px;
+  width: 100%;
+  background-color: var(--backgroundInput);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  box-sizing: border-box;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.h_search_wrap .search_form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 15px;
+  border: 0;
+}
+.h_search_wrap .search_form button i {
+  opacity: 0.8;
+}
+
+.h_profile_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.h_profile_wrap .h_profile_box {
+  position: relative;
+  flex: 1;
+}
+.h_profile_wrap .profile_link_upload {
+  padding: 5px 15px;
+  display: block;
+}
+.h_profile_wrap .profile_link_upload i {
+  opacity: 0.9;
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+}
+.h_profile_wrap .profile_link_set {
+  display: block;
+}
+.h_profile_wrap .profile_link_set[aria-pressed=true] + .profile_nav_box {
+  display: block;
+}
+.h_profile_wrap .profile_thumb {
+  overflow: hidden;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.h_profile_wrap .profile_thumb::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: inherit;
+  content: "";
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
+}
+
+.profile_nav_box {
+  position: absolute;
+  top: 60px;
+  right: 0;
+}
+
+.nav_logged_list {
+  background-color: var(--background);
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+.nav_logged_list li + li {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+.nav_logged_list a {
+  display: block;
+  padding: 0 15px;
+  font-size: 14px;
+  line-height: 38px;
+}
+
+.nav_unlogged_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_unlogged_list li {
+  flex: 1;
+}
+.nav_unlogged_list a {
+  padding: 0 10px;
+  display: block;
+  font-weight: bold;
+  line-height: 38px;
+}
+
+.main_container {
+  padding-top: 88px;
+  height: calc(100% - 80px);
+  box-sizing: border-box;
+}
+
+.footer {
+  padding: 20px 30px;
+  line-height: 40px;
+  background-color: var(--backgroundPoint);
+}
+.footer .f_btn_top {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+}
+.footer .f_btn_top:hover {
+  color: var(--point);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: var(--main);
+  background-color: var(--background);
+}

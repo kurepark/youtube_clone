@@ -1,0 +1,26 @@
+
+// color variables
+:root {
+    --main : #121212;
+    --sub: #B7C4CF;
+    --point: #f05454;
+    --background: #fff;
+    --backgroundPoint: #f5f5f5;
+    --backgroundInput: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main : #f0f0f0;
+        --sub: #eee;
+        --point: #f05454;
+        --background: #0f0f0f;
+        --backgroundPoint: #39393c;
+        --backgroundInput: #39393c;
+    }
+}
+
+// variables
+$commonPaddingV: 20px;
+$commonPaddingH: 30px;
+$commonRadius: 6px;
