@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import session from "express-session";
+import flash from "express-flash";
 import morgoStore from "connect-mongo";
 import rootRouter from "./routers/rootRouter";
 import videoRouter from "./routers/videoRouter";
@@ -17,6 +18,7 @@ app.set("view engine", "pug");
 app.set('views', process.cwd() + '/src/views');
 app.use(logger);
 app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
 app.use(session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
@@ -27,8 +29,9 @@ app.use((req, res, next) => {
     res.header("Cross-Origin-Embedder-Policy", "require-corp");
     res.header("Cross-Origin-Opener-Policy", "same-origin");
     next();
-    });
+});
 
+app.use(flash());
 app.use(localsMiddleware); // session 미들웨어보다 다음에 있어야한다
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("assets"));
