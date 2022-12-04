@@ -42,6 +42,9 @@ block content
                 li(data-id=comment.id)
                     div 
                         div.comments_thumb     
+                        if loggedInUser.socialOnly
+                            img(src=`${video.owner.avatarUrl}` width="45" height="45")
+                        else
                             img(src=`/${video.owner.avatarUrl}` width="45" height="45")
                         div.comments_name=video.owner.username
                         p.comments_text=comment.text
