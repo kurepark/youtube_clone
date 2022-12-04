@@ -4,7 +4,7 @@ block content
     div.common_form_container
         h1.page_title=pageTitle
             if errorMessage 
-                div=errorMessage
+                div.error_message=errorMessage
             form(method="POST").common_form
                 input(type="text" requred name="username" placeholder="사용자이름을 입력하세요"  )
                 input(type="password" requred name="password" placeholder="비밀번호를 입력하세요"  )

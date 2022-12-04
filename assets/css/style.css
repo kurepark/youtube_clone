@@ -524,8 +524,6 @@ html, body {
 }
 .watch_wrap .video_btns {
   overflow: hidden;
-  flex-shrink: 0;
-  margin-left: auto;
   display: flex;
   align-items: center;
 }
@@ -696,6 +694,7 @@ html, body {
   object-fit: cover;
 }
 .comments_list .comments_name {
+  margin-right: 15px;
   font-size: 18px;
   font-weight: bold;
 }
@@ -780,6 +779,7 @@ html, body {
   margin-top: 15px;
   padding: 0 15px;
   display: block;
+  color: #121212;
   background-color: var(--sub);
   font-size: 18px;
   font-weight: bold;
@@ -812,6 +812,7 @@ html, body {
   margin-top: 15px;
   padding: 0 15px;
   display: block;
+  color: #121212;
   background-color: var(--sub);
   font-size: 18px;
   font-weight: bold;
@@ -884,4 +885,8 @@ html, body {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
+}
+
+.error_message {
+  color: var(--point);
 }

@@ -1,9 +1,10 @@
 extends ../base.pug
 
 block content 
-    h4 update video
-    form(method="POST")
-        input(name="title", type="text", placeholder="new video title", value=video.title, required)
-        input(type="text" placeholder="description" required name="description" minlength="5" value=video.description)
-        input(type="text" placeholder="hashtags, separated by comma" required name="hashtags" value=video.hashtags.join())
-        button save
+    div.common_form_container
+        h1.page_title=pageTitle 
+        form(method="POST").common_form
+            input(name="title", type="text", placeholder="new video title", value=video.title, required)
+            input(type="text" placeholder="description" required name="description" minlength="5" value=video.description)
+            input(type="text" placeholder="hashtags, separated by comma" required name="hashtags" value=video.hashtags.join())
+            button(type="submit") 수정사항 저장
