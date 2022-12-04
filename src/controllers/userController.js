@@ -196,7 +196,6 @@ export const see = async(req, res) => {
     const {id} = req.params;
     const user = await User.findById(id).populate("videos");
     // 유저의 id 와 같은 onwer 비디오를 찾음
-    console.log(user)
 
     if(!user) {
         return res.status(400).render("404", {pageTitle: "User not found"});

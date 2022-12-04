@@ -28,7 +28,6 @@ const addComment = (text, newCommentId, commentUser) => {
     commentDelete.addEventListener("click", handleCommentDelete);
     newComment.appendChild(commentDelete);
     videoComments.prepend(newComment);
-    console.log("videoComments",videoComments);
 }
 
 const handleSubmit = async (e) => {
