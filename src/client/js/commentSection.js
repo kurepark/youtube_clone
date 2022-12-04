@@ -15,7 +15,7 @@ const addComment = (text, newCommentId, commentUser) => {
 
     newComment.appendChild(commentThumbDiv);
     newComment.dataset.id = newCommentId;
-    commentThumbImg.src = `/${commentUser.avatarUrl}`;
+    commentThumbImg.src = `${commentUser.avatarUrl}`;
     commentThumbImg.style.width = "45px";
     commentThumbImg.style.height = "45px";
     commentThumbDiv.appendChild(commentThumbImg);

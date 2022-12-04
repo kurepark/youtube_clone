@@ -9,18 +9,24 @@ const s3 = new aws.S3({
     }
 })
 
-const multerUploader = multerS3({
+const s3ImageUploader = multerS3({
     s3: s3,
-    bucket: "youtube-clone-reloaded",
+    bucket: "youtube-clone-reloaded/images",
+    acl: "public-read",
+})
+const s3VideoUploader = multerS3({
+    s3: s3,
+    bucket: "youtube-clone-reloaded/videos",
     acl: "public-read",
 })
 
+const isHeroku = process.env.NODE_ENV === "production"; 
 
 export const localsMiddleware = (req, res,next) => {
     res.locals.loggedIn = Boolean(req.session.loggedIn); // res.local 에 변수를 생성시 전역적으로 사용이 가능하다
     res.locals.siteName = "youtube clone";
     res.locals.loggedInUser = req.session.user; // postLogin 에서 저장한 req 정보를 res.local 에 전역변수로 저장하여 사용
-
+    res.locals.isHeroku = isHeroku;
     next();
 }
 
@@ -48,7 +54,7 @@ export const avatarUpload = multer({
     limits: {
         fileSize: 3000000,
     },
-    storage: multerUploader
+    storage: isHeroku ? s3ImageUploader : undefined,
 })
 
 export const videoUpload = multer({
@@ -56,5 +62,5 @@ export const videoUpload = multer({
     limits: {
         fileSize: 10000000,
     },
-    storage: multerUploader
+    storage: isHeroku ? s3VideoUploader : undefined,
 })

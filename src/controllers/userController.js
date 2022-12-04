@@ -129,7 +129,7 @@ export const finishGithubLogin = async(req, res) => {
 export const logout = (req, res) => {
     req.session.destroy();
 
-    req.flash("info", "byebye");
+    // req.flash("info", "byebye");
     return res.redirect("/");
 }
 
@@ -149,7 +149,7 @@ export const postEdit = async(req, res) => {
     } = req;
 
     const updateUser = await User.findByIdAndUpdate(_id,{
-        avatarUrl:  file ? file.location : avatarUrl,
+        avatarUrl:  file ? (isHeroku ? file.location : file.path) : avatarUrl,
         name,
         email,
         username,
@@ -189,6 +189,7 @@ export const postChangePassword = async(req, res) => {
     await user.save();
     req.session.user.password = user.password; // 세션에서 정보를 받으면 세션도 업데이트 해줘야한다
     req.flash("info", "password update");
+
     return res.redirect("/users/logout");
 }
 
