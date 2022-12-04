@@ -22,7 +22,7 @@ const downloadFile = (fileUrl, fileName) => {
 
 const handleDownload = async() => {
 
-    actionBtn.removeEventListener("click", handelDownload);
+    actionBtn.removeEventListener("click", handleDownload);
     actionBtn.innerText = "변환중...";
     actionBtn.disabled = true;
 
