@@ -20,7 +20,7 @@ const downloadFile = (fileUrl, fileName) => {
     anchor.click();
 }
 
-const handelDownload = async() => {
+const handleDownload = async() => {
 
     actionBtn.removeEventListener("click", handelDownload);
     actionBtn.innerText = "Transcoding...";
@@ -65,10 +65,11 @@ const handelDownload = async() => {
 }
 
 const handleStart = () => {
-    actionBtn.innerText = "Stop Recordeing"
+    actionBtn.innerText = "Recordeing"
+    actionBtn.disabled = true;
     actionBtn.removeEventListener("click", handleStart);
 
-    recorder = new MediaRecorder(stream);
+    recorder = new MediaRecorder(stream, {mineType: "video/webm"});
     recorder.ondataavailable = (e) => {
         videoFile = URL.createObjectURL(e.data);
         video.srcObject = null;
