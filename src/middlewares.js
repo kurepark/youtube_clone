@@ -22,6 +22,12 @@ const s3VideoUploader = multerS3({
 
 const isHeroku = process.env.NODE_ENV === "production"; 
 
+export const videoUploadMiddleware = (req, res, next) => {
+    res.header("Cross-Origin-Embedder-Policy", "require-corp");
+    res.header("Cross-Origin-Opener-Policy", "same-origin");
+    next();
+}
+
 export const localsMiddleware = (req, res,next) => {
     res.locals.loggedIn = Boolean(req.session.loggedIn); // res.local 에 변수를 생성시 전역적으로 사용이 가능하다
     res.locals.siteName = "youtube clone";
