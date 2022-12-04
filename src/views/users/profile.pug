@@ -2,7 +2,9 @@ extends ../base
 include ../mixins/video
 
 block content 
-    each video in user.videos 
-        +video(video)
-    else 
-        li sorry nothing find
+    div.video_card_wrap
+        each video in user.videos 
+            +video(video)
+        else 
+            div.video_empty_msg 
+                p 업로드한 영상이 없어요! 개성있는 영상을 올려보세요

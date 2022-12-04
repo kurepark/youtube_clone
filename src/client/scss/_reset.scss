@@ -51,5 +51,16 @@ a{
 	text-decoration: none;
 }
 button {
+	border: none;
 	background: none;
+	cursor: pointer;
+}
+
+img {
+	vertical-align: top;
+	border-radius: inherit;
+	-webkit-border-radius: inherit;
+	-moz-border-radius: inherit;
+	-ms-border-radius: inherit;
+	-o-border-radius: inherit;
 }

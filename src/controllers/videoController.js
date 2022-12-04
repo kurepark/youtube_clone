@@ -60,7 +60,7 @@ export const postEdit = async(req, res) => {
 }
 
 export const getUpload = (req, res) => {
-    return res.render("videos/upload", {pageTitle: "upload video"})
+    return res.render("videos/upload", {pageTitle: "동영상 업로드"})
 }
 
 export const postUpload = async(req, res) => {
@@ -69,6 +69,7 @@ export const postUpload = async(req, res) => {
     } } = req.session;
     const {video, thumb} = req.files;
     const {title, description, hashtags} = req.body;
+    const isHeroku = process.env.NODE_ENV === "production";
     try {
         const newVideo = await Video.create({
             title,
@@ -83,7 +84,7 @@ export const postUpload = async(req, res) => {
         user.save();
         return res.redirect("/");
     } catch(error) {
-        return res.status(404).render("upload", {pageTitle: "upload video", errorMessage: error._message});
+        return res.status(404).render("videos/upload", {pageTitle: "upload video", errorMessage: error._message});
     }
 
 }
@@ -143,11 +144,13 @@ export const createComment = async(req, res) => {
     if(!video) {
         return res.sendStatus(404);
     }
+    console.log("user",user);
 
     const comment = await Comment.create({
         text,
         owner: user._id,
         video: id,
+        avatarUrl: user.avatarUrl,
     });
     video.comments.push(comment._id);
     video.save();

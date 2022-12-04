@@ -2,7 +2,9 @@ extends base.pug
 include mixins/video
 
 block content 
-    each video in videos 
-       +video(video)
-    else 
-        div sorry nothing found
+    div.video_card_wrap
+        each video in videos 
+            +video(video)
+        else 
+            div.video_empty_msg 
+                p 비디오가 없습니다. 새로운 비디오를 업로드 해보세요!

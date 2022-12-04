@@ -1,0 +1,180 @@
+.common_form_container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: $commonPaddingV 0 100px;
+}
+
+.common_form {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: $commonPaddingV 0;
+
+    label {
+        margin-top: 10px;
+        width: 100%;
+        display: block;
+        padding: 10px 15px;
+        font-size: 18px;
+        line-height: 23px;
+        box-sizing: border-box;
+        border: 1px solid rgba(#000, 0.3);
+        border-radius: $commonRadius;
+        -webkit-border-radius: $commonRadius;
+        -moz-border-radius: $commonRadius;
+        -ms-border-radius: $commonRadius;
+        -o-border-radius: $commonRadius;
+    }
+
+    input[type="file"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        clip: rect(0 0 0 0);
+        margin: -1px;
+        overflow: hidden;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 18px;
+        line-height: 23px;
+        box-sizing: border-box;
+        border: 1px solid rgba(#000, 0.3);
+        border-radius: $commonRadius;
+        -webkit-border-radius: $commonRadius;
+        -moz-border-radius: $commonRadius;
+        -ms-border-radius: $commonRadius;
+        -o-border-radius: $commonRadius;
+    }
+
+    button[type="submit"] {
+        margin-top: 10px;
+        width: 100%;
+        padding: 0 15px;
+        background-color: var(--sub);
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 45px;
+        border-radius: $commonRadius;
+        -webkit-border-radius: $commonRadius;
+        -moz-border-radius: $commonRadius;
+        -ms-border-radius: $commonRadius;
+        -o-border-radius: $commonRadius;
+    }
+
+    .form_link_github,
+    .form_link_password {
+        width: 100%;
+        margin-top: 15px;
+        padding: 0 15px;
+        display: block;
+        background-color: var(--sub);
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 45px;
+        box-sizing: border-box;
+        border-radius: $commonRadius;
+        -webkit-border-radius: $commonRadius;
+        -moz-border-radius: $commonRadius;
+        -ms-border-radius: $commonRadius;
+        -o-border-radius: $commonRadius;
+    }
+
+    .form_link_password {
+        color: #fff;
+        background-color: var(--point);
+    }
+}
+
+.form_info {
+    padding: $commonPaddingV 0;
+    max-width: 600px;
+    margin: 0 auto;
+    border-top: 1px solid var(--sub);
+    text-align: center;
+
+    .form_info_msg {
+        font-size: 14px;
+    }
+
+    .form_link_info {
+        width: 100%;
+        margin-top: 15px;
+        padding: 0 15px;
+        display: block;
+        background-color: var(--sub);
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 45px;
+        box-sizing: border-box;
+        border-radius: $commonRadius;
+        -webkit-border-radius: $commonRadius;
+        -moz-border-radius: $commonRadius;
+        -ms-border-radius: $commonRadius;
+        -o-border-radius: $commonRadius;
+    }
+}
+
+.form_profile_thumb {
+    margin: $commonPaddingV auto;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+    > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid rgba(#000, 0.06);
+        border-radius: inherit;
+        -webkit-border-radius: inherit;
+        -moz-border-radius: inherit;
+        -ms-border-radius: inherit;
+        -o-border-radius: inherit;
+    }
+}
+
+//recorder
+.recorder_box {
+    width: 600px;
+    margin: 0 auto;
+
+    video {
+        width: 100%;
+    }
+
+    .recorder_btn {
+        width: 100%;
+        margin-top: 15px;
+        padding: 0 15px;
+        display: block;
+        background-color: var(--sub);
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 45px;
+        box-sizing: border-box;
+        border-radius: $commonRadius;
+        -webkit-border-radius: $commonRadius;
+        -moz-border-radius: $commonRadius;
+        -ms-border-radius: $commonRadius;
+        -o-border-radius: $commonRadius;
+    }
+}

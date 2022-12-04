@@ -3,9 +3,9 @@ import Video from "../models/Video";
 import fetch from "node-fetch";
 import bcrypt from "bcrypt";
 
-export const getJoin = (req, res) => res.render("join",{ pageTitle: "join"});
+export const getJoin = (req, res) => res.render("join",{ pageTitle: "회원가입"});
 export const postJoin = async(req, res) => {
-    const pageTitle = "join";
+    const pageTitle = "회원가입";
     const {name, username, email, location, password, password2} = req.body;
     if(password !== password2) {
         return res.status(400).render("join", {pageTitle, errorMessage: "패스워드가 다릅니다"})
@@ -15,7 +15,7 @@ export const postJoin = async(req, res) => {
     // 아래 코드는 username 과 email 둘중에 하나라도 true 가 나온다면 둘중 한 값이 이미 가입한 사람의 값이므로 에러메시지 출력해야함 
     const exists = await User.exists({$or: [{ username}, {email}]}); // $or  둘 중 하나만 충족해도 됨
     if(exists) {
-        return res.status(400).render("join", { pageTitle, errorMessage: "this username/email is already taken"})
+        return res.status(400).render("join", { pageTitle, errorMessage: "이메일 혹은 사용자 이름이 이미 존재합니다."})
     }
     try {
         await User.create({
@@ -33,10 +33,10 @@ export const postJoin = async(req, res) => {
         })
     }
 }
-export const getLogin = (req, res) => res.render("login", {pageTitle: "login"});
+export const getLogin = (req, res) => res.render("login", {pageTitle: "로그인"});
 export const postLogin = async(req, res) => {
     const { username, password} = req.body;
-    const pageTitle = "login"
+    const pageTitle = "로그인"
     const user = await User.findOne({username, socialOnly: false})
 
     if(!user) {
@@ -134,7 +134,7 @@ export const logout = (req, res) => {
 }
 
 export const getEdit = (req, res) => {
-    return res.render("users/edit-profile", {pageTitle: "Edit profile"})
+    return res.render("users/edit-profile", {pageTitle: "프로필 수정하기"})
 }
 
 export const postEdit = async(req, res) => {
@@ -147,7 +147,7 @@ export const postEdit = async(req, res) => {
         },
         file,
     } = req;
-
+    const isHeroku = process.env.NODE_ENV === "production";
     const updateUser = await User.findByIdAndUpdate(_id,{
         avatarUrl:  file ? (isHeroku ? file.location : file.path) : avatarUrl,
         name,

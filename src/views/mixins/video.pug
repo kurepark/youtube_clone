@@ -2,14 +2,15 @@ mixin video(video)
      div.video_card
         a(href=`/videos/${video.id}`).video_link
             div.video_image_box 
-                img(src=`${video.thumbUrl}`)
-            h4  
-                a(href=`/videos/${video.id}`)=video.title
-            p=video.description 
-            div 
-                span #{video.owner.name} / 
-                span #{video.meta.views} 회
-            ul
-                each hashtag in video.hashtags 
-                    li=hashtag
-            hr 
+                img(src=`${video.thumbUrl}` width="100%")
+            div.video_info_box
+                div.video_info
+                    h4.video_title=video.title
+                    p.vide_desc=video.description
+                    div.video_metas 
+                        span ⭐️ #{video.meta.rating}
+                        span 조회수 #{video.meta.views} 회
+                    ul.video_hashtags
+                        each hashtag in video.hashtags 
+                            li
+                                span=hashtag

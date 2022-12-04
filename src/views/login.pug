@@ -1,16 +1,18 @@
 extends base 
 
 block content 
-    if errorMessage 
-        div=errorMessage
-    form(method="POST")
-        input(type="text" requred name="username" placeholder="write your username"  )
-        input(type="password" requred name="password" placeholder="write your password"  )
-        button(type="submit") login
-        br
-        a(href="/users/github/start") continue with github &rarr;
+    div.common_form_container
+        h1.page_title=pageTitle
+            if errorMessage 
+                div=errorMessage
+            form(method="POST").common_form
+                input(type="text" requred name="username" placeholder="사용자이름을 입력하세요"  )
+                input(type="password" requred name="password" placeholder="비밀번호를 입력하세요"  )
+                button(type="submit") 로그인
+                br
+                a(href="/users/github/start").form_link_github 깃허브 계정으로 로그인하기
 
-    hr
-    div 
-        span 계정이 없나요?
-        a(href="/join") join in now &rarr;
+        
+            div.form_info
+                div.form_info_msg 회원이 아니신가요?
+                a(href="/join").form_link_info 회원가입하기

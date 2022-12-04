@@ -3,53 +3,56 @@ include ../mixins/video
 
 
 block content 
-    div#videoContainer(data-videoid=video.id)
-        video(src=`${video.fileUrl}` controls)
-        div#videoControls
-            button#play Play 
-            button#mute Mute 
-            input(type="range" value="0.5" step="0.2" min="0" max="1")#volumn
-            div#time 
-                span#currentTime 00:00:00
-                span /
-                span#totalTime 00:00:00
-            div 
-                input(type="range" step="0.1" value="0" min="0" )#timeline
-            div 
-                button#fullScreen Enter Full Screen
+    div.watch_wrap
+        div#videoContainer.video_container(data-videoid=video.id)
+            video(src=`${video.fileUrl}`)
+            div#videoControls.video_controls_box
+                div.video_timeline_bar 
+                    input(type="range" step="0.1" value="0" min="0" )#timeline
+                div.video_controls
+                    div.video_btns
+                        button#play.video_btn_play
+                            i.fas.fa-play 
+                        button#mute.video_btn_mute
+                            i.fas.fa-volume-down 
+                        input(type="range" value="0.5" step="0.2" min="0" max="1")#volumn.video_btn_volumn
+                    div#time.video_playtime_bar 
+                        span#currentTime 00:00:00
+                        span /
+                        span#totalTime 00:00:00
+                    button#fullScreen.video_btn_fullscreen 
+                        i.fas.fa-expand
+        div.video_title_box 
+            h3.video_title=video.title
+            p.video_dsec=video.description 
+        div.video_info_box
+            div.video_info_thumb
+                img(src=`${video.owner.avatarUrl}` width="100%")
+            div.video_user_info
+                a(href=`/users/${video.owner._id}`).video_link_user=video.owner.name
+                div.video_info
+                    small=video.createdAt
+            if loggedInUser && (String(video.owner._id) === String(loggedInUser._id))
+                div.video_btns
+                    a(href=`${video.id}/edit`).video_link_edit 비디오 수정하기
 
-    div
-        p=video.description 
-        small=video.createdAt
-    div 
-        small uplaoded by
-            a(href=`/users/${video.owner._id}`)=video.owner.name
-
-    hr
-    if loggedInUser && (String(video.owner._id) === String(loggedInUser._id))
-        a(href=`${video.id}/edit`) Edit video &rarr;
-        br
-        a(href=`${video.id}/delete`) Delete video &rarr;
-    if loggedInUser
-        div 
-            form#commentForm
-                textarea(cols="30" rows="10" placeholder="write comment")
-                button(type="submit") Add comment
-
-    div.comments_box 
-        ul.comments_list 
-            each comment in video.comments.reverse() 
-                li(data-id=comment.id)
-                    div 
-                        div.comments_thumb   
-                            if loggedInUser.avatarUrl  
-                                if loggedInUser.avatarUrl.includes("github")
-                                    img(src=`${video.owner.avatarUrl}` width="45" height="45")
-                                else
-                                    img(src=`${video.owner.avatarUrl}` width="45" height="45")
-                        div.comments_name=video.owner.username
-                        p.comments_text=comment.text
-                    button.comments_btn_delete ✖️
+                    a(href=`${video.id}/delete`).video_link_delete 비디오 삭제하기
+        if loggedInUser
+            div.comment_form_box
+                form#commentForm.comment_form
+                    textarea(cols="30" rows="3" placeholder="댓글 추가하기")
+                    button(type="submit") 댓글 추가하기
+        div.comments_box 
+            ul.comments_list 
+                each comment in video.comments.reverse() 
+                    li(data-id=comment.id)
+                        div.comment_item 
+                            div=comment
+                            div.comments_thumb   
+                                img(src=`${video.owner.avatarUrl}` width="45" height="45")
+                            div.comments_name=comment.username
+                            p.comments_text=comment.text
+                        button.comments_btn_delete ✖️
 block scripts 
     script(src="/static/js/videoPlayer.js")
     script(src="/static/js/commentSection.js")
