@@ -18,10 +18,11 @@ header.header
                 if loggedIn
                     a(href="#" aria-pressed="false").profile_link_set
                         div.profile_thumb 
-                        if loggedInUser.avatarUrl.includes("github")
-                            img(src=`${loggedInUser.avatarUrl}` width="100%")
-                        else 
-                            img(src=`/${loggedInUser.avatarUrl}` width="100%")
+                            if loggedInUser.avatarUrl
+                                if loggedInUser.avatarUrl.includes("github")
+                                    img(src=`${loggedInUser.avatarUrl}` width="100%")
+                                else 
+                                    img(src=`${loggedInUser.avatarUrl}` width="100%")
                     div.profile_nav_box 
                         ul.nav_logged_list 
                             li 
