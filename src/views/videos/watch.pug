@@ -42,7 +42,7 @@ block content
                 li(data-id=comment.id)
                     div 
                         div.comments_thumb     
-                        if loggedInUser.socialOnly
+                        if loggedInUser.avatarUrl.includes("github")
                             img(src=`${video.owner.avatarUrl}` width="45" height="45")
                         else
                             img(src=`/${video.owner.avatarUrl}` width="45" height="45")
