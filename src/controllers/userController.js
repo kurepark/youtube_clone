@@ -199,8 +199,8 @@ export const see = async(req, res) => {
     // 유저의 id 와 같은 onwer 비디오를 찾음
 
     if(!user) {
-        return res.status(400).render("404", {pageTitle: "User not found"});
+        return res.status(400).render("404", {pageTitle: "사용자를 찾을 수 없습니다"});
     }
 
-    return res.render("users/profile", {pageTitle: `${user.name} profile`, user})
+    return res.render("users/profile", {pageTitle: `${user.name}의 동영상`, user})
 };

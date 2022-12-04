@@ -90,6 +90,7 @@
         
         .video_desc {
             @include ellipsis(2);
+
             font-size: 18px;
             line-height: 22px;;
         }

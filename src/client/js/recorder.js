@@ -51,7 +51,7 @@ const handleDownload = async() => {
     downloadFile(thumbUrl, "myThumbnail.jpg")
 
     ffmpeg.FS("unlink", files.input);
-    ffmpeg.FS("unlink", fiels.output);
+    ffmpeg.FS("unlink", files.output);
     ffmpeg.FS("unlink", files.thumb);
 
     URL.revokeObjectURL(mp4Url);

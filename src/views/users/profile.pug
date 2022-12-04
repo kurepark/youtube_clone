@@ -2,6 +2,8 @@ extends ../base
 include ../mixins/video
 
 block content 
+    div.my_profile_box
+        h1.page_title=pageTitle 
     div.video_card_wrap
         each video in user.videos 
             +video(video)

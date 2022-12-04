@@ -6,16 +6,12 @@ html, body {
     background-color: var(--background);
 }
 
-@mixin inputStyle {
-
-}
-
 @mixin ellipsis($lines: null) {
     @if($lines == null) {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-    } else {
+    } @else {
         display: -webkit-box;
         overflow: hidden;
         text-overflow: ellipsis;
