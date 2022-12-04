@@ -319,11 +319,11 @@ html, body {
   -o-border-radius: 6px;
 }
 .video_card .video_image_box:hover > img {
-  transform: translate(-50%, -50%) scale(1.05);
-  -webkit-transform: translate(-50%, -50%) scale(1.05);
-  -moz-transform: translate(-50%, -50%) scale(1.05);
-  -ms-transform: translate(-50%, -50%) scale(1.05);
-  -o-transform: translate(-50%, -50%) scale(1.05);
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
 }
 .video_card .video_image_box::before {
   content: "";
