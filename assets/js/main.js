@@ -16,7 +16,7 @@
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ \"./src/client/scss/style.scss\");\n\n\n//# sourceURL=webpack://youtube_clone/./src/client/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ \"./src/client/scss/style.scss\");\n\nconst profileLink = document.querySelector(\".profile_link_set\");\nconst topBtn = document.querySelector(\".f_btn_top\");\nconst handleNav = e => {\n  e.preventDefault();\n  const navAttr = profileLink.ariaPressed;\n  if (navAttr === \"false\") {\n    profileLink.ariaPressed = \"true\";\n  } else {\n    profileLink.ariaPressed = \"false\";\n  }\n};\nconst handleTopScroll = e => {\n  e.preventDefault();\n  document.body.scrollIntoView();\n};\nprofileLink.addEventListener(\"click\", handleNav);\ntopBtn.addEventListener(\"click\", handleTopScroll);\n\n//# sourceURL=webpack://youtube_clone/./src/client/js/main.js?");
 
 /***/ }),
 

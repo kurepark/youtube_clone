@@ -18,6 +18,7 @@
 
             margin-top: 5px;
             font-size: 16px;
+            line-height: 22px;
             font-weight: 400;
         }
     }
@@ -97,7 +98,7 @@
 
         [class^="video_link"] {
             padding: 0 15px;
-            color: #fff;
+            color: #121212;
             font: {
                 size: 14px;
                 weight: bold;
@@ -112,6 +113,7 @@
         }
 
         .video_link_delete {
+            margin-left: 10px;
             color: #fff;
             background-color: var(--point);
         }
@@ -195,9 +197,11 @@
     textarea {
         width: 100%;
         padding: 10px 15px;
+        color: var(--main);
         font-size: 14px;
         height: 45px;
         border: 1px solid rgba(#000, 0.3);
+        background-color: var(--backgroundInput);
         border-radius: $commonRadius;
         -webkit-border-radius: $commonRadius;
         -moz-border-radius: $commonRadius;
@@ -211,7 +215,7 @@
     button[type="submit"] {
         padding: 0 15px;
         margin-left: 15px;
-        color: #fff;
+        color: #121212;
         line-height: 35px;
         background-color: var(--sub);
         border-radius: $commonRadius;
@@ -224,19 +228,34 @@
 
 .comments_list {
     li {
+        margin-top: 5px;
         display: flex;
+        padding: 5px 10px;
         align-items: center;
+        border-radius: $commonRadius;
+        -webkit-border-radius: $commonRadius;
+        -moz-border-radius: $commonRadius;
+        -ms-border-radius: $commonRadius;
+        -o-border-radius: $commonRadius;
+
+        &:nth-child(odd) {
+            background-color: rgba(#000, 0.02);
+        }
     }
 
     .comment_item {
         display: flex;
         align-items: center;
+        line-height: 45px;
+        flex: 1;
     }
 
     .comments_thumb {
         margin-right: 15px;
         position: relative;
         overflow: hidden;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
@@ -257,5 +276,26 @@
             -ms-border-radius: inherit ;
             -o-border-radius: inherit ;
         }
+
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .comments_name {
+        font: {
+            size: 18px;
+            weight: bold;
+        }
+    }
+
+    .comments_text {
+        font-size: 14px;
+    }
+
+    .comments_btn_delete {
+        color: var(--point);
     }
 }

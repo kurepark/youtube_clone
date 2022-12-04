@@ -48,10 +48,10 @@ block content
                     li(data-id=comment.id)
                         div.comment_item 
                             div.comments_thumb   
-                                img(src=`${comment.avatarUrl}` width="45" height="45")
+                                img(src=`${comment.avatarUrl}` width="100%" )
                             div.comments_name=comment.username
                             p.comments_text=comment.text
-                        button.comments_btn_delete ✖️
+                        button.comments_btn_delete 댓글 삭제하기
 block scripts 
     script(src="/static/js/videoPlayer.js")
     script(src="/static/js/commentSection.js")

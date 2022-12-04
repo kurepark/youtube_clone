@@ -128,6 +128,7 @@ img {
 }
 .h_search_wrap .search_form input {
   padding: 5px 45px 5px 15px;
+  color: var(--main);
   font-size: 18px;
   line-height: 30px;
   width: 100%;
@@ -148,6 +149,7 @@ img {
   border: 0;
 }
 .h_search_wrap .search_form button i {
+  color: var(--main);
   opacity: 0.8;
 }
 
@@ -210,6 +212,7 @@ img {
 }
 
 .profile_nav_box {
+  display: none;
   position: absolute;
   top: 60px;
   right: 0;
@@ -229,6 +232,14 @@ img {
 .nav_logged_list li + li {
   border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
+@media (prefers-color-scheme: dark) {
+  .nav_logged_list {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  .nav_logged_list li + li {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
 .nav_logged_list a {
   display: block;
   padding: 0 15px;
@@ -240,6 +251,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  white-space: nowrap;
 }
 .nav_unlogged_list li {
   flex: 1;
@@ -451,6 +463,7 @@ html, body {
   -webkit-box-orient: vertical;
   margin-top: 5px;
   font-size: 16px;
+  line-height: 22px;
   font-weight: 400;
 }
 .watch_wrap .video_info_box {
@@ -518,7 +531,7 @@ html, body {
 }
 .watch_wrap .video_btns [class^=video_link] {
   padding: 0 15px;
-  color: #fff;
+  color: #121212;
   font-size: 14px;
   font-weight: bold;
   line-height: 35px;
@@ -530,6 +543,7 @@ html, body {
   -o-border-radius: 30px;
 }
 .watch_wrap .video_btns .video_link_delete {
+  margin-left: 10px;
   color: #fff;
   background-color: var(--point);
 }
@@ -603,9 +617,11 @@ html, body {
 .comment_form textarea {
   width: 100%;
   padding: 10px 15px;
+  color: var(--main);
   font-size: 14px;
   height: 45px;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: var(--backgroundInput);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -618,7 +634,7 @@ html, body {
 .comment_form button[type=submit] {
   padding: 0 15px;
   margin-left: 15px;
-  color: #fff;
+  color: #121212;
   line-height: 35px;
   background-color: var(--sub);
   border-radius: 6px;
@@ -629,17 +645,31 @@ html, body {
 }
 
 .comments_list li {
+  margin-top: 5px;
   display: flex;
+  padding: 5px 10px;
   align-items: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.comments_list li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
 }
 .comments_list .comment_item {
   display: flex;
   align-items: center;
+  line-height: 45px;
+  flex: 1;
 }
 .comments_list .comments_thumb {
   margin-right: 15px;
   position: relative;
   overflow: hidden;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -660,6 +690,21 @@ html, body {
   -ms-border-radius: inherit;
   -o-border-radius: inherit;
 }
+.comments_list .comments_thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.comments_list .comments_name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.comments_list .comments_text {
+  font-size: 14px;
+}
+.comments_list .comments_btn_delete {
+  color: var(--point);
+}
 
 .common_form_container {
   max-width: 1024px;
@@ -677,9 +722,11 @@ html, body {
   width: 100%;
   display: block;
   padding: 10px 15px;
+  color: var(--main);
   font-size: 18px;
   line-height: 23px;
   box-sizing: border-box;
+  background-color: var(--backgroundInput);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -701,10 +748,12 @@ html, body {
   margin-top: 10px;
   width: 100%;
   padding: 10px 15px;
+  color: var(--main);
   font-size: 18px;
   line-height: 23px;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: var(--backgroundInput);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;

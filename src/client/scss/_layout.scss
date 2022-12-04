@@ -35,6 +35,7 @@
 
         input {
             padding: 5px 45px 5px 15px;
+            color: var(--main);
             font-size: 18px;
             line-height: 30px;;
             width: 100%;
@@ -56,6 +57,7 @@
             border: 0;
 
             i {
+                color: var(--main);
                 opacity: 0.8;
             }
         }
@@ -131,7 +133,7 @@
 }
 
 .profile_nav_box {
-    // display: none;
+    display: none;
     position: absolute;
     top: 60px;
     right: 0;
@@ -152,6 +154,14 @@
         border-top: 1px solid rgba(#000, 0.3);
     }
 
+    @media (prefers-color-scheme: dark)  {
+        border-color: rgba(#fff, 0.3);
+
+        li + li {
+            border-color: rgba(#fff, 0.3);
+        }
+    }
+
     a {
         display: block;
         padding: 0 15px;
@@ -164,6 +174,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    white-space: nowrap;
 
     li {
         flex: 1;

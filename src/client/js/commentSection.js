@@ -20,8 +20,7 @@ const addComment = (text, newCommentId, commentUser) => {
     commentThumbDiv.className = "comments_thumb";
     newComment.dataset.id = newCommentId;
     commentThumbImg.src = `${commentUser.avatarUrl}`;
-    commentThumbImg.style.width = "45px";
-    commentThumbImg.style.height = "45px";
+    commentThumbImg.style.width = "100%";
     commentThumbDiv.appendChild(commentThumbImg);
     commentName.className = "comment_name";
     commentName.innerText = `${commentUser.username}`;
@@ -30,7 +29,7 @@ const addComment = (text, newCommentId, commentUser) => {
     commentText.innerText = `${text}`;
     newComment.appendChild(commentText);
     commentDelete.className = "comments_btn_delete";
-    commentDelete.innerText = "✖️";
+    commentDelete.innerText = "댓글 삭제하기";
     commentDelete.addEventListener("click", handleCommentDelete);
     newComment.appendChild(commentDelete);
     videoComments.prepend(newComment);
