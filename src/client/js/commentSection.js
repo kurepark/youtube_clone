@@ -22,12 +22,12 @@ const addComment = (text, newCommentId, commentUser) => {
     commentThumbImg.src = `${commentUser.avatarUrl}`;
     commentThumbImg.style.width = "100%";
     commentThumbDiv.appendChild(commentThumbImg);
-    commentName.className = "comment_name";
+    commentName.className = "comments_name";
     commentName.innerText = `${commentUser.username}`;
-    newComment.appendChild(commentName);
+    commentItemDiv.appendChild(commentName);
     commentText.className = "comments_text"
     commentText.innerText = `${text}`;
-    newComment.appendChild(commentText);
+    commentItemDiv.appendChild(commentText);
     commentDelete.className = "comments_btn_delete";
     commentDelete.innerText = "댓글 삭제하기";
     commentDelete.addEventListener("click", handleCommentDelete);
