@@ -365,11 +365,11 @@ html, body {
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
 }
-.video_card .video_info_box .vide_desc {
+.video_card .video_info_box .video_desc {
   font-size: 18px;
   line-height: 22px;
 }
-.video_card .video_info_box .vide_desc else {
+.video_card .video_info_box .video_desc else {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -429,6 +429,9 @@ html, body {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
+.video_card .video_info_box .video_hashtags li + li {
+  margin-left: 5px;
+}
 .video_card .video_info_box .video_hashtags li span {
   color: var(--main);
   font-size: 14px;
@@ -481,9 +484,9 @@ html, body {
 .watch_wrap .video_info_box {
   padding: 15px 0;
   overflow: hidden;
+  display: flex;
 }
 .watch_wrap .video_info_thumb {
-  float: left;
   margin-right: 15px;
   position: relative;
   width: 40px;
@@ -515,6 +518,7 @@ html, body {
 }
 .watch_wrap .video_user_info {
   overflow: hidden;
+  flex: 1;
 }
 .watch_wrap .video_user_info .video_link_user {
   overflow: hidden;
@@ -547,6 +551,8 @@ html, body {
 }
 .watch_wrap .video_btns {
   overflow: hidden;
+  flex-shrink: 0;
+  margin-left: auto;
   display: flex;
   align-items: center;
 }
@@ -837,6 +843,7 @@ html, body {
   -moz-border-radius: inherit;
   -ms-border-radius: inherit;
   -o-border-radius: inherit;
+  content: "";
 }
 
 .recorder_box {

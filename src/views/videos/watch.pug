@@ -47,9 +47,8 @@ block content
                 each comment in video.comments.reverse() 
                     li(data-id=comment.id)
                         div.comment_item 
-                            div=comment
                             div.comments_thumb   
-                                img(src=`${video.owner.avatarUrl}` width="45" height="45")
+                                img(src=`${comment.avatarUrl}` width="45" height="45")
                             div.comments_name=comment.username
                             p.comments_text=comment.text
                         button.comments_btn_delete ✖️

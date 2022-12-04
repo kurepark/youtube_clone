@@ -88,7 +88,7 @@
             line-height: 24px;
         }
         
-        .vide_desc {
+        .video_desc {
             @include ellipsis(2);
             font-size: 18px;
             line-height: 22px;;
@@ -136,6 +136,10 @@
                 -moz-border-radius: $commonRadius;
                 -ms-border-radius: $commonRadius;
                 -o-border-radius: $commonRadius;
+
+                & + li {
+                    margin-left: 5px;
+                }
 
                 span {
                     color: var(--main);

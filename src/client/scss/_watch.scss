@@ -25,10 +25,10 @@
     .video_info_box {
         padding: 15px 0;
         overflow: hidden;
+        display: flex;
     }
 
     .video_info_thumb {
-        float: left;
         margin-right: 15px;
         position: relative;
         width: 40px;
@@ -63,6 +63,7 @@
 
     .video_user_info {
         overflow: hidden;
+        flex: 1;
         
         .video_link_user {
             @include ellipsis;
@@ -89,6 +90,8 @@
 
     .video_btns {
         overflow: hidden;
+        flex-shrink: 0;
+        margin-left: auto;
         display: flex;
         align-items: center;
 
