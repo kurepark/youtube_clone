@@ -51,7 +51,8 @@ block content
                                 img(src=`${comment.avatarUrl}` width="100%" )
                             div.comments_name=comment.username
                             p.comments_text=comment.text
-                        button.comments_btn_delete 댓글 삭제하기
+                        if loggedInUser && (String(comment.owner._id) === String(loggedInUser._id))
+                            button.comments_btn_delete 댓글 삭제하기
 block scripts 
     script(src="/static/js/videoPlayer.js")
     script(src="/static/js/commentSection.js")
